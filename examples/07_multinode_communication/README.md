@@ -109,6 +109,13 @@ mpirun -np 8 ./multinode_allreduce
 
 ### Multi-Node Execution (Production Configuration)
 
+**Important**: In all the examples below, `node1` and `node2` are placeholder hostnames. Replace them with the actual hostnames or IP addresses of your compute nodes. You can find your node's hostname by running `hostname` on each machine.
+
+For example:
+- If your nodes are named `gpu-server-01` and `gpu-server-02`, use those names
+- If using IP addresses: `192.168.1.10` and `192.168.1.11`
+- In cloud environments: instance names or internal DNS names
+
 #### Two Nodes with 8 GPUs Each (16 Total)
 
 This is the target configuration for this example:
@@ -122,7 +129,7 @@ mpirun -np 16 \
 Or with a hostfile:
 
 ```bash
-# Create hostfile
+# Create hostfile (replace node1 and node2 with your actual hostnames)
 cat > hostfile << EOF
 node1 slots=8
 node2 slots=8
@@ -207,6 +214,8 @@ srun -N 2 \
 ## Expected Output
 
 ### Successful Run (2 Nodes, 16 GPUs)
+
+**Note**: The output below shows `node1` and `node2` as example hostnames. Your actual output will display your real node hostnames.
 
 ```
 =================================================================
