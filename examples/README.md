@@ -92,6 +92,14 @@ computation and communication, and fine-grained control over collective
 implementation. This folder demonstrates how to implement collectives using
 device-side kernels.
 
+### [Multinode Communication](07_multinode_communication/)
+
+This example demonstrates NCCL collective operations across multiple nodes with
+multiple GPUs per node. Designed for a configuration of 2 nodes with 8 GPUs each,
+this example shows the complete workflow for large-scale distributed GPU
+computing including automatic GPU assignment, NCCL communicator initialization
+across nodes, and verification of results. Requires MPI for multi-node coordination.
+
 
 ## Prerequisites
 
